@@ -59,7 +59,7 @@
               <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
             </div>
 
-            <div class="col-md-5">
+           <!--  <div class="col-md-5">
               <label for="country" class="form-label">Country</label>
               <select class="form-select" id="country" required>
                 <option value="">Choose...</option>
@@ -79,7 +79,7 @@
               <div class="invalid-feedback">
                 Please provide a valid state.
               </div>
-            </div>
+            </div> -->
 
             
           </div>
