@@ -8,6 +8,34 @@
 </head>
 
 <script type="text/javascript">
+	/* 이름 유효성 검사 */
+	/* 이메일 유효성 검사 */
+	/* 폰번호 유효성 검사 */
+	/* 비밀번호 유효성 검사 */
+	
+	/* 아이디 유효성검사  */
+	function checkID(){
+		let id = document.getElementById("userID").value;
+		let warning = document.getElementById("IDWarning");
+		var regExpID = /^[0-9a-zA-Z]*$/
+		
+		if(!regExpID.test(id)){
+			warning.innerHTML = '<p id="warning"> 영어 대소문자와 숫자만 입력 가능합니다. </p>';
+		}
+		if(id.length < 3){
+			warning.innerHTML = "아이디를 3글자 이상으로 입력해주세요";
+		} 
+		if(id.length > 13){
+			warning.innerHTML = "아이디를 12글자 이하로만 입력해주세요";
+		} 
+	}
+
+	function typingID(){
+		let warning = document.getElementById("IDWarning");
+		warning.innerHTML = "";
+	}
+	
+	/* 비밀번호 일치 검사 */
 	function checkPW()	{
 		let pw = document.getElementById("userPW").value;
 		let cfpw = document.getElementById("cfPW").value;
@@ -22,26 +50,6 @@
 		warning.innerHTML = "";
 	}
 	
-	function checkID(){
-		let id = document.getElementById("userID").value;
-		let warning = document.getElementById("IDWarning");
-		var regExpID = /^[0-9a-zA-Z]*$/
-		
-		if(!regExpID.test(id)){
-			warning.innerHTML = "영어 대소문자와 숫자만 입력 가능합니다.";
-		}
-		if(id.length < 3){
-			warning.innerHTML = "아이디를 3글자 이상으로 입력해주세요";
-		} 
-		if(id.length > 13){
-			warning.innerHTML = "아이디를 12글자 이하로만 입력해주세요";
-		} 
-	}
-
-	function typingID(){
-		let warning = document.getElementById("IDWarning");
-		warning.innerHTML = "";
-	}
 </script>
 
 <style>
@@ -50,6 +58,12 @@
 		left : 50%;
 		transform : translate(-50%,0%);
 		padding: 50px;
+	}
+	
+	#warning{
+		color: blue;
+		font-size: 12px;
+		text-align: center;
 	}
 </style>
 
@@ -62,7 +76,7 @@
 	</div>
 	
 	<div>
-		<form action="#" method="get" name="signup">
+		<form action="signin.do" method="get" name="signup">
 			<div>
 				<div>
 					<label>Name</label>
