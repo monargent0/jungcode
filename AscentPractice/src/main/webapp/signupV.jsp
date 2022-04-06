@@ -23,10 +23,10 @@
 			warning.innerHTML = '<p id="warning"> 영어 대소문자와 숫자만 입력 가능합니다. </p>';
 		}
 		if(id.length < 3){
-			warning.innerHTML = "아이디를 3글자 이상으로 입력해주세요";
+			warning.innerHTML = '<p id="warning"> 아이디를 3글자 이상으로 입력해주세요 </p>';
 		} 
 		if(id.length > 13){
-			warning.innerHTML = "아이디를 12글자 이하로만 입력해주세요";
+			warning.innerHTML = '<p id="warning"> 아이디를 12글자 이하로만 입력해주세요 </p>';
 		} 
 	}
 
@@ -42,7 +42,7 @@
 		let warning = document.getElementById("CFWarning");
 		
 		if (pw != cfpw ) {
-			warning.innerHTML = "비밀번호가 일치하지 않습니다";
+			warning.innerHTML = '<p id="warning"> 비밀번호가 일치하지 않습니다 </p>';
 		}
 	}
 	function typingCFPW(){
