@@ -54,6 +54,9 @@
 	}
 	
 	/* 아이디중복검사 */
+	/* function doublecheck(){
+		let id = = document.getElementById("userID").value;
+	} */
 	
 	/* 이메일 유효성 검사 */
 	function checkEM(){
@@ -152,14 +155,14 @@
 	</div>
 	
 	<div>
-		<form action="signin.do" method="get" name="signup">
+		<form action="signin.do" method="get" name="signin">
 			<div>
 				<div>
 					<label>Name</label>
 				</div>
 				<div>
 					<input type="text" name="userName" placeholder="이름을 입력해 주세요." required="required" 
-					id="NAME" onBlur="checkNAME()" onkeydown="typingNAME()" size="50">
+					id="NAME" onBlur="checkNAME()" onkeydown="typingNAME()" size="50" >
 				</div>
 				<div id="NameWarning"></div>
 			</div>
@@ -171,6 +174,9 @@
 				<div>
 					<input type="text" name="userID" placeholder="아이디를 입력해 주세요." required="required" 
 					onBlur="checkID()" onkeydown="typingID()" id="userID" size="50">
+				</div>
+				<div>
+					<button onclick="doublecheck()"></button>
 				</div>
 				<div id="IDWarning"></div>
 			</div>
