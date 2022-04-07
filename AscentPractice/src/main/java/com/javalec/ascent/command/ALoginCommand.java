@@ -20,7 +20,7 @@ public class ALoginCommand implements ACommand {
 		
 		ADaoU daoU = new ADaoU();
 		ArrayList<ADtoAD> dtoAD = daoU.login(userID, userPW);
-		
+	
 			
 		if(dtoAD.isEmpty()) {
 			session.setAttribute("alertTxt", "일치하는 아이디가 없습니다." );
