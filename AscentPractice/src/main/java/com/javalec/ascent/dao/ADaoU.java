@@ -97,6 +97,33 @@ public class ADaoU {
 		return dtoADs;
 	} // login 
 	
+	// sign out
+	public void signout(String userID, String userPW) {
+				
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+				
+		try {
+			//DB연결메서드 불러오기
+			connection = dataSource.getConnection(); 
+			//pstmt 생성
+			String query = "update userinfo set u_ResignDate = now() where userID = ? and userPW = ?" ;
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, userID);
+			preparedStatement.setString(2, userPW);
+			//실행 
+			preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally { 
+				try {
+					if(preparedStatement !=null) preparedStatement.close();
+					if(connection != null) connection.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+		}
+	}//sign out
 	
 	
 }

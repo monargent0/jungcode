@@ -8,8 +8,7 @@
 </head>
 <body>
 사용자 메인사이트
-<%
-session.invalidate();
-%>
+<a href="signOutV.jsp">회원탈퇴</a>
+
 </body>
 </html>

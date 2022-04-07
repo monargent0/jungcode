@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.ascent.command.ACommand;
 import com.javalec.ascent.command.ALoginCommand;
+import com.javalec.ascent.command.ASignoutCommand;
 import com.javalec.ascent.command.ASinginCommand;
 
 /**
@@ -51,6 +52,12 @@ public class AFrontController extends HttpServlet {
 			// log in
 			case("/login.do"):
 				command = new ALoginCommand();
+				command.execute(request, response);
+				viewPage = (String) request.getAttribute("viewPage");
+				break;
+			// sign in
+			case("/signOut.do") :
+				command = new ASignoutCommand();
 				command.execute(request, response);
 				viewPage = (String) request.getAttribute("viewPage");
 				break;
