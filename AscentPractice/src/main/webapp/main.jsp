@@ -8,7 +8,11 @@
 </head>
 <body>
 사용자 메인사이트
+
 <a href="signOutV.jsp">회원탈퇴</a>
+
+<a href="logOutH.jsp">로그아웃</a>
+
 
 </body>
 </html>
