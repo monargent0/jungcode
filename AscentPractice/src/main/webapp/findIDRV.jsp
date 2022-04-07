@@ -24,13 +24,13 @@
 			</h3>
 		</div>
 
-		<div style="float: left;">
-			<button onclick="window.close()">닫기</button>
-		</div>	
-		<div style="float: right;">
-			<button onclick="location.href='findPWV.jsp'" >비밀번호 찾기</button>
-		</div>
-		
+			<div style="float: left;">
+				<button onclick="window.close()">닫기</button>
+			</div>	
+			<div style="float: right;">
+				<button onclick="location.href='findPWV.jsp'" >비밀번호 찾기</button>
+			</div>
+
 	</div>
 </body>
 </html>

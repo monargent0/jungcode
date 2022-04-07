@@ -24,7 +24,7 @@
 	</div>
 
 	<div>
-		<form action="findID.do" method="get" >
+		<form action="findID.do" method="post" >
 			<div>
 				<div>
 					<input type="text" name="userName" placeholder="이름을 입력해 주세요" required="required" size="50" >

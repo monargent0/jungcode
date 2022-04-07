@@ -57,7 +57,7 @@ public class AFrontController extends HttpServlet {
 				command.execute(request, response);
 				viewPage = (String) request.getAttribute("viewPage");
 				break;
-			// sign in
+			// sign out
 			case("/signOut.do") :
 				command = new ASignoutCommand();
 				command.execute(request, response);
