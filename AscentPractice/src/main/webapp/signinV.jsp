@@ -176,7 +176,7 @@
 					onBlur="checkID()" onkeydown="typingID()" id="userID" size="50">
 				</div>
 				<div>
-					<button onclick="doublecheck()"></button>
+					<button formaction="중복확인.do?" onclick="doublecheck()">아이디 중복 확인</button>
 				</div>
 				<div id="IDWarning"></div>
 			</div>

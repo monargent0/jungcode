@@ -32,8 +32,8 @@ public class ADaoU {
 		
 		try {
 			connection = dataSource.getConnection(); // DB연결 끝
-			String query = "insert into userinfo (userName, userID, userEmail, userPhone, userPW, userBirth, userGender, u_SignDate) ";
-			query += "values (?,?,?,?,?,?,?,now())";
+			String query = "insert into userinfo (userName, userID, userEmail, userPhone, userPW, userBirth, userGender, u_SignDate, adminCheck) ";
+			query += "values (?,?,?,?,?,?,?,now(),'0')";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, userName);
 			preparedStatement.setString(2, userID);
