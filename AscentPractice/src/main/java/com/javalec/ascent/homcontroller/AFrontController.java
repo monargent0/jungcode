@@ -15,6 +15,7 @@ import com.javalec.ascent.command.AFindPWCommand;
 import com.javalec.ascent.command.ALoginCommand;
 import com.javalec.ascent.command.ASignoutCommand;
 import com.javalec.ascent.command.ASinginCommand;
+import com.javalec.ascent.command.AUserDetailCommand;
 
 /**
  * Servlet implementation class AFrontController
@@ -63,15 +64,23 @@ public class AFrontController extends HttpServlet {
 				command.execute(request, response);
 				viewPage = (String) request.getAttribute("viewPage");
 				break;
+			// id 찾기
 			case("/findID.do") :
 				command = new AFindIDCommand();
 				command.execute(request, response);
 				viewPage = "findIDRV.jsp";
 				break;
+			// pw 찾기
 			case("/findPW.do") :
 				command = new AFindPWCommand();
 				command.execute(request, response);
 				viewPage = "findPWRV.jsp";
+				break;
+			// 개인정보 view
+			case("userDetail.do"):
+				command = new AUserDetailCommand();
+				command.execute(request, response);
+				viewPage = "userDetailV.jsp";
 				break;
 			
 			

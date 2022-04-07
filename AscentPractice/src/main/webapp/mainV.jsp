@@ -317,7 +317,19 @@
 						}
 					});
 				</script>
-					<i class="bi bi-person-fill" style="font-size:2.5rem;cursor: pointer; " href="#"></i>
+					
+					<%
+					if(session.getAttribute("userID") == null){
+					%>
+					<i class="bi bi-person-fill" style="font-size:2.5rem;cursor: pointer;" onclick = "location.href='loginV.jsp'" ></i>
+					<%
+					}else if(session.getAttribute("userID") != null){
+					%>
+					<i class="bi bi-person-fill" style="font-size:2.5rem;cursor: pointer;" onclick = "location.href='myPageV.jsp'" ></i>
+				  <% } %>
+				
+				
+				
 				
 					<j  class="bi bi-bag-heart" style="font-size:2.3rem; cursor: pointer;" href="#"></j>
 
