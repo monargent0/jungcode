@@ -125,5 +125,69 @@ public class ADaoU {
 		}
 	}//sign out
 	
+	// find
+		public String findID(String userName, String userEmail) {
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+			ResultSet resultSet = null;
+			String id = null;
+			
+			try {
+				connection = dataSource.getConnection();
+				String query = "select userID from userinfo where userName = ? and userEmail = ? and u_ResignDate is null";
+				preparedStatement = connection.prepareStatement(query);
+				preparedStatement.setString(1, userName);
+				preparedStatement.setString(2, userEmail);
+				resultSet = preparedStatement.executeQuery();
+				
+				if(resultSet.next()) {
+					id = resultSet.getString("userID");
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+					try {
+						if(resultSet != null) resultSet.close();
+						if(preparedStatement != null) preparedStatement.close();
+						if(connection != null) connection.close();
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+			} //finally
+			return id;
+		} // find
+	
+		// find
+		public String findPW(String userID ,String userName, String userEmail) {
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+			ResultSet resultSet = null;
+			String pw = null;
+			
+			try {
+				connection = dataSource.getConnection();
+				String query = "select userPW from userinfo where userID =? and userName = ? and userEmail = ? and u_ResignDate is null";
+				preparedStatement = connection.prepareStatement(query);
+				preparedStatement.setString(1, userID);
+				preparedStatement.setString(2, userName);
+				preparedStatement.setString(3, userEmail);
+				resultSet = preparedStatement.executeQuery();
+				
+				if(resultSet.next()) {
+					pw = resultSet.getString("userPW");
+				}
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				try {
+					if(resultSet != null) resultSet.close();
+					if(preparedStatement != null) preparedStatement.close();
+					if(connection != null) connection.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+			} //finally
+			return pw;
+		} // find
 	
 }

@@ -17,20 +17,19 @@ public class ASignoutCommand implements ACommand {
 		String userId = (String) session.getAttribute("userID");
 		String userPW = request.getParameter("userPW");
 		
-		System.out.println(userId);
-		System.out.println(userPW);
+//		System.out.println(userId);
+//		System.out.println(userPW);
 		
 		ADaoU daou = new ADaoU();
 		ArrayList<ADtoAD> dtoI = daou.login(userId, userPW);
-		System.out.println(dtoI.get(0));
 		
-//		if(dtoAD.isEmpty()) {
-//			session.setAttribute("alertTxt", "비밀번호를 확인해주세요." );
-//			request.setAttribute("viewPage", "signOutV.jsp");	
-//		} else {
-//			daoU.signout(loginId, userPW);			
-//			request.setAttribute("viewPage", "signOutH.jsp");	
-//		}
+		if(dtoI.isEmpty()) {
+			session.setAttribute("alertTxt", "비밀번호를 확인해주세요." );
+			request.setAttribute("viewPage", "signOutV.jsp");	
+		} else {
+			daou.signout(userId, userPW);			
+			request.setAttribute("viewPage", "signOutH.jsp");	
+		}
 	}
 
 }

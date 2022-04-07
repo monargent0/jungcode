@@ -7,30 +7,38 @@
 <title>회원탈퇴</title>
 </head>
 
-<%-- <script type="text/javascript">
+<style>
+	.contents{
+		position: absolute;
+		left : 50%;
+		transform : translate(-50%,0%);
+		padding: 50px ;
+	}
+</style>
+
+ <script type="text/javascript">
 	let alertTxt = '<%=(String)session.getAttribute("alertTxt")%>';
 	if(alertTxt!== "null"){
 		alert(alertTxt);
-		<%
-		session.invalidate();
-		%>
+		sessionStorage.removeItem(alertTxt);
 	}
-</script> --%>
+</script> 
 
-<body>
+<body bgcolor="#FFFAF6">
 
+<div class="contents">
 	<div>
 		<h1>SIGN OUT</h1>
 	</div>
 
 	<div>
-		<form action="signOut.do" method="get" name="signOut">
+		<form action="signOut.do" method="post" name="signOut">
 			<div>
 				<div>
 					<label>비밀번호 확인</label>
 				</div>
 				<div>
-					<input type="text" name="userPW" placeholder="비밀번호를 입력해 주세요." required="required" size="50" >
+					<input type="password" name="userPW" placeholder="비밀번호를 입력해 주세요." required="required" size="50" >
 				</div>
 			</div>
 			<div>
@@ -38,6 +46,6 @@
 			</div>
 		</form>
 	</div>
-
+</div>
 </body>
 </html>

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javalec.ascent.command.ACommand;
+import com.javalec.ascent.command.AFindIDCommand;
+import com.javalec.ascent.command.AFindPWCommand;
 import com.javalec.ascent.command.ALoginCommand;
 import com.javalec.ascent.command.ASignoutCommand;
 import com.javalec.ascent.command.ASinginCommand;
@@ -61,7 +63,16 @@ public class AFrontController extends HttpServlet {
 				command.execute(request, response);
 				viewPage = (String) request.getAttribute("viewPage");
 				break;
-			
+			case("/findID.do") :
+				command = new AFindIDCommand();
+				command.execute(request, response);
+				viewPage = "findIDRV.jsp";
+				break;
+			case("/findPW.do") :
+				command = new AFindPWCommand();
+				command.execute(request, response);
+				viewPage = "findPWRV.jsp";
+				break;
 			
 			
 		}

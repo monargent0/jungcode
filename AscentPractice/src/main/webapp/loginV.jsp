@@ -14,6 +14,7 @@
 		transform : translate(-50%,0%);
 		padding: 50px ;
 	}
+
 </style>
 
 <script type="text/javascript">
@@ -35,29 +36,32 @@
 		<h1>LOG IN</h1>
 	</div>  
  
- 	<div>
- 		<form action="login.do" method="get">
+ 	<div >
+ 		<form action="login.do" method="post">
  			<div>
-				<div>
-					ID :
-				</div>
-				<div>
-					<input type="text" name="userID" size="30" >
+				<div style="float: right;">
+					<input type="text" name="userID" size="30" placeholder="아이디">
 				</div>
 			</div>
  			<div>
-				<div>
-					PW :
-				</div>
-				<div>
-					<input type="password" name="userPW" size="30" >
+				<div style="float: right;">
+					<input type="password" name="userPW" size="30" placeholder="비밀번호" >
 				</div>
 			</div>
+			<div>&nbsp;</div>
  			<div>
-				<button type="submit">LOGIN</button>
+				<div  align="left" style="float: left;" ><button formaction="signinV.jsp">SING IN</button></div>
+				<div  align="right" style="float: right;"><button type="submit">LOGIN</button></div> 
 			</div>
  		</form>
  	</div>
+
+ 		<div style="float: right;">
+ 			<a href = "" target ="popup" onclick="window.open('findIDV.jsp','popup','width=600,height=600'); return false">아이디/비밀번호 찾기</a>
+ 			<!-- 
+ 			 <button onclick="location.href=''" >아이디/비밀번호 찾기</button>
+ 			 -->
+ 		</div>
  
  </div>
 
