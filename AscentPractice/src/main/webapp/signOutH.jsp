@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 	<script>
 		alert("회원 탈퇴가 완료되었습니다.");
-		location.href='loginV.jsp';
+		location.href='mainV.jsp';
 		
 		<%
 		session.invalidate();

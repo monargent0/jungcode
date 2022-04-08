@@ -19,7 +19,6 @@
 <body bgcolor="#FFFAF6">
 
 <div class="contents">
-	<a href="mainV.jsp">main</a> <a href="logOutH.jsp">로그아웃</a><br>
 
 <!-- 개인정보수정,회원탈퇴 -->
 <h2>MY PAGE</h2>
@@ -30,6 +29,7 @@
 <button onclick="location='reviewList.do'" style="width: 200px;" >후기 목록</button> <br>
 <button onclick="location='counselList.do'" style="width: 200px;" >1대1문의조회</button> <br>
 
+	<a href="mainV.jsp">main</a> &nbsp; <a href="logOutH.jsp">로그아웃</a><br>
 </div>
 
 </body>

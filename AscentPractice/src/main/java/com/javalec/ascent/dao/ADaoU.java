@@ -126,7 +126,7 @@ public class ADaoU {
 		}
 	}//sign out
 	
-	// find
+	// find id
 		public String findID(String userName, String userEmail) {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
@@ -156,9 +156,9 @@ public class ADaoU {
 					}
 			} //finally
 			return id;
-		} // find
+		} // find id
 	
-		// find
+		// find pw
 		public String findPW(String userID ,String userName, String userEmail) {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
@@ -189,7 +189,7 @@ public class ADaoU {
 				}
 			} //finally
 			return pw;
-		} // find
+		} // find pw
 		
 		// user info
 		public ADtoU userinfo(String userID) {

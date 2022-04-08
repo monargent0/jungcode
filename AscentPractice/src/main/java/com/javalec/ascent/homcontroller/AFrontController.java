@@ -59,12 +59,6 @@ public class AFrontController extends HttpServlet {
 				command.execute(request, response);
 				viewPage = (String) request.getAttribute("viewPage");
 				break;
-			// sign out
-			case("/signOut.do") :
-				command = new ASignoutCommand();
-				command.execute(request, response);
-				viewPage = (String) request.getAttribute("viewPage");
-				break;
 			// id 찾기
 			case("/findID.do") :
 				command = new AFindIDCommand();
@@ -88,6 +82,12 @@ public class AFrontController extends HttpServlet {
 				command = new AUserModifyCommand();
 				command.execute(request, response);
 				viewPage = "userDetail.do";
+				break;
+				// sign out
+			case("/signOut.do") :
+				command = new ASignoutCommand();
+				command.execute(request, response);
+				viewPage = (String) request.getAttribute("viewPage");
 				break;
 				
 			
