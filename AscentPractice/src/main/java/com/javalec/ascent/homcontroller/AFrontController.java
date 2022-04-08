@@ -16,6 +16,7 @@ import com.javalec.ascent.command.ALoginCommand;
 import com.javalec.ascent.command.ASignoutCommand;
 import com.javalec.ascent.command.ASinginCommand;
 import com.javalec.ascent.command.AUserDetailCommand;
+import com.javalec.ascent.command.AUserModifyCommand;
 
 /**
  * Servlet implementation class AFrontController
@@ -77,11 +78,19 @@ public class AFrontController extends HttpServlet {
 				viewPage = "findPWRV.jsp";
 				break;
 			// 개인정보 view
-			case("userDetail.do"):
+			case("/userDetail.do"):
 				command = new AUserDetailCommand();
 				command.execute(request, response);
 				viewPage = "userDetailV.jsp";
 				break;
+			// 개인정보 수정
+			case("/userModify.do"):
+				command = new AUserModifyCommand();
+				command.execute(request, response);
+				viewPage = "userDetail.do";
+				break;
+				
+			
 			
 			
 		}

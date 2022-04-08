@@ -200,7 +200,7 @@ public class ADaoU {
 			
 			try {
 				connection = dataSource.getConnection();
-				String query = "select userName,userGender,userBirth,userPhone,userEmail from userinfo where userID =? and u_ResignDate is null";
+				String query = "select userName, userGender, userBirth, userPhone, userEmail from userinfo where userID =? and u_ResignDate is null";
 				preparedStatement = connection.prepareStatement(query);
 				preparedStatement.setString(1, userID);
 				resultSet = preparedStatement.executeQuery();
@@ -227,6 +227,35 @@ public class ADaoU {
 			} //finally
 			return dto;
 		} // user info
+		
+		// user info modify
+		public void modifyUser(String userName, String userEmail, String userPhone, String userID) {
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+			
+			try {
+				//DB연결메서드 불러오기
+				connection = dataSource.getConnection(); 
+				//pstmt 생성
+				String query = "update userinfo set userName = ?, userEmail = ?, userPhone = ? where userID = ?" ;
+				preparedStatement = connection.prepareStatement(query);
+				preparedStatement.setString(1, userName);
+				preparedStatement.setString(2, userEmail);
+				preparedStatement.setString(3, userPhone);
+				preparedStatement.setString(4, userID);
+				//실행 
+				preparedStatement.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally { 
+					try {
+						if(preparedStatement !=null) preparedStatement.close();
+						if(connection != null) connection.close();
+					}catch (Exception e) {
+						e.printStackTrace();
+					}
+			}
+		} // info modify
 
 	
 }

@@ -40,12 +40,12 @@
  		<form action="login.do" method="post">
  			<div>
 				<div style="float: right;">
-					<input type="text" name="userID" size="30" placeholder="아이디">
+					<input type="text" name="userID" size="30" placeholder="아이디" required="required">
 				</div>
 			</div>
  			<div>
 				<div style="float: right;">
-					<input type="password" name="userPW" size="30" placeholder="비밀번호" >
+					<input type="password" name="userPW" size="30" placeholder="비밀번호" required="required">
 				</div>
 			</div>
 			<div>&nbsp;</div>

@@ -5,19 +5,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.javalec.ascent.dao.ADaoU;
-import com.javalec.ascent.dto.ADtoU;
 
-public class AUserDetailCommand implements ACommand {
+
+public class AUserModifyCommand implements ACommand {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String userId = (String) session.getAttribute("userID");
+		String userID = (String) session.getAttribute("userID");
+		String userName = request.getParameter("userName");
+		String userEmail = request.getParameter("userEmail");
+		String userPhone = request.getParameter("userPhone");
 		
 		ADaoU daoU = new ADaoU();
-		request.setAttribute("uinfo", daoU.userinfo(userId));
+		daoU.modifyUser(userName, userEmail, userPhone, userID);
 		
-//		System.out.println(daoU.userinfo(userId).getUserName());
 	}
 
 }

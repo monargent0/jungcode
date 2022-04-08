@@ -3,5 +3,5 @@
 <!DOCTYPE html>
 <%
 session.invalidate();
-response.sendRedirect("loginV.jsp");
+response.sendRedirect("mainV.jsp");
 %>
